@@ -1,0 +1,89 @@
+:root {
+  --blizzheight: 40px;
+  --containerWidth: 80%;
+}
+
+.blizz-nav {
+  position: relative;
+  background: #111;
+  width: 100%;
+  height: var(--blizzheight);
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  padding: 3px 0;
+  border-bottom: #222 solid 1px;
+  box-shadow: 0 0 10px #222;
+}
+
+.blizz-nav-content {
+  position: relative;
+  display: flex;
+  width: var(--containerWidth);
+  align-items: center;
+  z-index: 2;
+}
+.blizz-nav-logo-links {
+  display: flex;
+}
+.blizz-nav-logo-links img {
+  width: 62px;
+  object-fit: contain;
+  filter: brightness(1.7);
+  margin-right: 15px;
+}
+
+.blizz-nav-logo-links ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.blizz-nav-logo-links li p {
+  position: relative;
+  top: 2px;
+  margin: 0 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+}
+
+.blizz-nav-logo-links li a {
+  margin: 0 15px;
+  position: relative;
+  top: 2px;
+}
+
+.blizz-nav-login {
+  position: absolute;
+  right: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.blizz-nav-login li a {
+  margin: 0 0 0 15px;
+  position: relative;
+  top: 2px;
+}
+
+.blizz-nav-login li p {
+  position: relative;
+  top: 2px;
+  margin: 0 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+}
+
+.blizz-nav-login li:first-child a {
+  margin: 0;
+}
+
+.arrow-down {
+  font-weight: bold;
+  color: #999;
+  font-size: 14px;
+  margin: 3px;
+}

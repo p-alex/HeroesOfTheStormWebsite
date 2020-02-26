@@ -1,0 +1,10 @@
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  animation-name: opacity1;
+  animation-duration: 100ms;
+  z-index: 1;
+}
