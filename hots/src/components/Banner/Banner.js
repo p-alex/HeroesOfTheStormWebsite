@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./Banner.css";
 import NavBar from "./NavBar/NavBar";
 import VideoOne from "./Video/VideoOne";
-import VideoTwo from "./Video/VideoTwo";
-import VideoThree from "./Video/VideoThree";
+//import VideoTwo from "./Video/VideoTwo";
+//import VideoThree from "./Video/VideoThree";
 
 class Banner extends Component {
   state = {
@@ -18,10 +18,6 @@ class Banner extends Component {
     let video = null;
     if (this.state.slide === 1) {
       video = <VideoOne />;
-    } else if (this.state.slide === 2) {
-      video = <VideoTwo />;
-    } else if (this.state.slide === 3) {
-      video = <VideoThree />;
     }
     console.log(this.state.slide);
     return (
