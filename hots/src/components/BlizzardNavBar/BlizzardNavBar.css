@@ -1,6 +1,7 @@
 :root {
   --blizzheight: 40px;
   --containerWidth: 80%;
+  --containerAnimDuration: 400ms;
 }
 
 .blizz-nav {
@@ -13,7 +14,8 @@
   font-size: 14px;
   padding: 3px 0;
   border-bottom: #222 solid 1px;
-  box-shadow: 0 0 10px #222;
+  box-shadow: 0 0 15px #111;
+  z-index: 1;
 }
 
 .blizz-nav-content {

@@ -1,0 +1,69 @@
+.banner {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.banner video {
+  left: 0;
+  width: 2400px;
+  position: absolute;
+  z-index: 0;
+  filter: opacity(1);
+  animation-name: opacity1;
+  animation-duration: 600ms;
+}
+
+.call-to-action {
+  position: absolute;
+  width: 75%;
+  top: 250px;
+}
+
+.call-to-action h1 {
+  font-size: 3rem;
+  text-shadow: 0px 0px 10px black;
+}
+
+.call-to-action p {
+  font-size: 1.5rem;
+  margin-bottom: 80px;
+  text-shadow: 0px 0px 10px black;
+}
+
+.call-to-action a {
+  position: relative;
+  bottom: 0;
+  padding: 17px 60px;
+  background: rgb(255, 165, 0);
+  background: linear-gradient(180deg, #ff9500 0%, #f50 100%);
+  text-shadow: 0px 2px 3px grey;
+  box-shadow: inset 0 0 5px rgb(255, 255, 255);
+}
+
+.dots {
+  position: absolute;
+  bottom: 0;
+  display: none;
+  width: 100%;
+  justify-content: center;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  margin: 25px 15px;
+  box-shadow: 0px 0px 10px black;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.dot.dot-active {
+  background: #ff9500;
+}

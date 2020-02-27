@@ -1,0 +1,56 @@
+.navBar {
+  position: relative;
+  background: rgb(9, 39, 121);
+  background: linear-gradient(
+    180deg,
+    rgba(9, 39, 121, 1) 0%,
+    rgba(26, 55, 170, 1) 51%,
+    rgba(46, 46, 226, 1) 100%
+  );
+  box-shadow: inset 0 0 5px rgb(165, 165, 165);
+  width: 75%;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.navBar-logo-links {
+  position: relative;
+  display: flex;
+}
+
+.navBar-logo-links ul {
+  display: flex;
+  position: relative;
+  align-items: center;
+  left: 230px;
+}
+
+.navBar-logo-links ul li a {
+  padding: 17px;
+}
+
+.navBar-logo-links ul li a:hover {
+  background: rgb(0, 249, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 249, 255, 0.20772058823529416) 0%,
+    rgba(0, 249, 255, 0.05085784313725494) 76%
+  );
+}
+
+.navBar-logo-links img {
+  position: absolute;
+  top: -59px;
+  left: -40px;
+}
+
+.play-free-btn a {
+  padding: 17px;
+  background: rgb(255, 165, 0);
+  background: linear-gradient(180deg, #ff9500 0%, #f50 100%);
+  text-shadow: 0px 2px 3px grey;
+  box-shadow: inset 0 0 5px rgb(255, 255, 255);
+}
