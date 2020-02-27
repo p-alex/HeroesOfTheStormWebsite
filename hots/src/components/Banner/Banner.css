@@ -6,6 +6,7 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
+  background: #111;
 }
 
 .banner video {
@@ -13,7 +14,7 @@
   width: 2400px;
   position: absolute;
   z-index: 0;
-  filter: opacity(1);
+  filter: opacity(0.8);
   animation-name: opacity1;
   animation-duration: 600ms;
 }
