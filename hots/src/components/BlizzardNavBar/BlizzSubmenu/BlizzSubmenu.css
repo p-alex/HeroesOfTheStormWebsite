@@ -28,7 +28,7 @@
 .games:last-child {
   width: 30%;
   animation-name: opacity;
-  animation-duration: 700ms;
+  animation-duration: 800ms;
 }
 
 .games p {

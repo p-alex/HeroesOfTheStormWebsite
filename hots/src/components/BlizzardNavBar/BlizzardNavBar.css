@@ -58,14 +58,14 @@
 
 .blizz-nav-login {
   position: absolute;
-  right: 0;
+  right: 0px;
   display: flex;
   list-style: none;
   align-items: center;
 }
 
 .blizz-nav-login li a {
-  margin: 0 0 0 15px;
+  margin: 0 25px;
   position: relative;
   top: 2px;
 }
@@ -77,10 +77,6 @@
   cursor: pointer;
   user-select: none;
   font-size: 13px;
-}
-
-.blizz-nav-login li:first-child a {
-  margin: 0;
 }
 
 .arrow-down {
