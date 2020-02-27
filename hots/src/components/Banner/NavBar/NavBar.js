@@ -5,7 +5,9 @@ const navBar = props => {
   return (
     <nav className="navBar">
       <div className="navBar-logo-links">
-        <img src="/images/hots-logo-big.png" alt="logo" />
+        <a href="https://heroesofthestorm.com/en-us/" className="logo">
+          <img src="/images/hots-logo-big.png" alt="logo" />
+        </a>
         <ul>
           <li>
             <a href="/">GAME</a>
