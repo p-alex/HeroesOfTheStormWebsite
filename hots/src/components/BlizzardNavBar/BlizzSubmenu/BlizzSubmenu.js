@@ -27,7 +27,7 @@ class BlizzSubmenu extends Component {
       return (
         <li>
           <a href="/">
-            <img src={"/images/logos/" + game.imgName} />
+            <img src={"/images/Logos/" + game.imgName} />
             <small>{game.name}</small>
           </a>
         </li>
@@ -37,7 +37,7 @@ class BlizzSubmenu extends Component {
       return (
         <li>
           <a href="/">
-            <img src={"/images/logos/" + game.imgName} />
+            <img src={"/images/Logos/" + game.imgName} />
             <small>{game.name}</small>
           </a>
         </li>
