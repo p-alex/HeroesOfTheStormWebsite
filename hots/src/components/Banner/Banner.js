@@ -1,28 +1,14 @@
 import React, { Component } from "react";
 import "./Banner.css";
 import NavBar from "./NavBar/NavBar";
-import VideoOne from "./Video/VideoOne";
-//import VideoTwo from "./Video/VideoTwo";
-//import VideoThree from "./Video/VideoThree";
 
 class Banner extends Component {
-  state = {
-    slide: 1
-  };
-
-  slideHandler = id => {
-    this.setState({ slide: id });
-  };
-
   render() {
-    let video = null;
-    if (this.state.slide === 1) {
-      video = <VideoOne />;
-    }
-    console.log(this.state.slide);
     return (
       <header className="banner">
-        {video}
+        <video autoPlay loop>
+          <source src="/video/deathwing.mp4" />
+        </video>
 
         <NavBar />
         <div className="call-to-action">
@@ -30,20 +16,23 @@ class Banner extends Component {
           <p>Epic Heroes and Relentless Action on Diverse Battlegrounds</p>
           <a href="/">PLAY FREE NOW</a>
         </div>
-        <div className="dots">
+        {/*}<div className="dots">
           <div
             className={this.state.slide === 1 ? "dot dot-active" : "dot"}
-            onClick={() => this.slideHandler(1)}
           ></div>
           <div
             className={this.state.slide === 2 ? "dot dot-active" : "dot"}
-            onClick={() => this.slideHandler(2)}
           ></div>
           <div
             className={this.state.slide === 3 ? "dot dot-active" : "dot"}
-            onClick={() => this.slideHandler(3)}
           ></div>
-        </div>
+          <div
+            className={this.state.slide === 4 ? "dot dot-active" : "dot"}
+          ></div>
+          <div
+            className={this.state.slide === 5 ? "dot dot-active" : "dot"}
+          ></div>
+          </div>*/}
       </header>
     );
   }

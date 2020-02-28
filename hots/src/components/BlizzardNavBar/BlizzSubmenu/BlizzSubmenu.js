@@ -27,7 +27,7 @@ class BlizzSubmenu extends Component {
       return (
         <li>
           <a href="/">
-            <img src={"/images/" + game.imgName} />
+            <img src={"/images/logos/" + game.imgName} />
             <small>{game.name}</small>
           </a>
         </li>
@@ -37,7 +37,7 @@ class BlizzSubmenu extends Component {
       return (
         <li>
           <a href="/">
-            <img src={"/images/" + game.imgName} />
+            <img src={"/images/logos/" + game.imgName} />
             <small>{game.name}</small>
           </a>
         </li>
@@ -81,31 +81,31 @@ class BlizzSubmenu extends Component {
               <ul className="esports-list">
                 <li>
                   <a href="/">
-                    <img src="/images/e-overwatch.png" />
+                    <img src="/images/logos/e-overwatch.png" />
                     <p>Overwatch League</p>
                   </a>
                 </li>
                 <li>
                   <a href="/">
-                    <img src="/images/e-overwatch-cup.png" />
+                    <img src="/images/logos/e-overwatch-cup.png" />
                     <p>Overwatch World Cup</p>
                   </a>
                 </li>
                 <li>
                   <a href="/">
-                    <img src="/images/e-hs.png" />
+                    <img src="/images/logos/e-hs.png" />
                     <p>Hearthstone Masters</p>
                   </a>
                 </li>
                 <li>
                   <a href="/">
-                    <img src="/images/e-starcraft.png" />
+                    <img src="/images/logos/e-starcraft.png" />
                     <p>Starcraft 2 WCS</p>
                   </a>
                 </li>
                 <li>
                   <a href="/">
-                    <img src="/images/e-wow.png" />
+                    <img src="/images/logos/e-wow.png" />
                     <p>World of Warcraft Arena World Championship</p>
                   </a>
                 </li>
