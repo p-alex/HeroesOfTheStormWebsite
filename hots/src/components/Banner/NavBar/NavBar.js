@@ -34,13 +34,13 @@ class NavBar extends Component {
         <nav className="navBar">
           <div className="navBar-logo-links">
             <a href="https://heroesofthestorm.com/en-us/" className="logo-big">
-              <img src="/images/logos/hots-logo-big.png" alt="logo" />
+              <img src="/images/Logos/hots-logo-big.png" alt="logo" />
             </a>
             <a
               href="https://heroesofthestorm.com/en-us/"
               className="logo-small"
             >
-              <img src="/images/logos/hots-logo-small.png" alt="logo" />
+              <img src="/images/Logos/hots-logo-small.png" alt="logo" />
             </a>
             <ul>
               <li>
