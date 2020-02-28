@@ -19,7 +19,7 @@ class NavBar extends Component {
         <nav className="navBarMobilePlaceholder">
           <div className="hamburger">
             <img
-              src="/images/icons/hamburger-icon.png"
+              src="/images/Icons/hamburger-icon.png"
               onClick={this.toggleNavBarHandler}
             />
           </div>

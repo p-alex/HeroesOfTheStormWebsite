@@ -64,7 +64,7 @@ class BlizzardNavBar extends Component {
       <div className="blizz-nav">
         <div className="blizz-nav-content">
           <div className="blizz-nav-logo-links">
-            <img src="/images/logos/blizz-logo.png" alt="blizz" />
+            <img src="/images/Logos/blizz-logo.png" alt="blizz" />
             <ul>
               <li>
                 <p onClick={this.gamesMenuHandler}>
