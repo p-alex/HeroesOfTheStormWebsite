@@ -24,7 +24,7 @@ class NavBar extends Component {
             />
           </div>
 
-          <img src="/images/logos/hots-logo-big.png" />
+          <img src="/images/Logos/hots-logo-big.png" />
           <p>Stuff</p>
         </nav>
         <NavBarMobile

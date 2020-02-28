@@ -13,7 +13,7 @@ class NavBarMobile extends Component {
               <div className="closeNavBarMobile" onClick={this.props.close}>
                 <span>X</span>
               </div>
-              <img src="/images/logos/hots-logo-big.png" />
+              <img src="/images/Logos/hots-logo-big.png" />
               <ul>
                 <li>
                   <a href="/" className="link-active">
@@ -37,7 +37,7 @@ class NavBarMobile extends Component {
                 PLAY FOR FREE
               </a>
               <div className="blizzLogoNavBarMobile">
-                <img src="/images/logos/blizz-logo-white.png" />
+                <img src="/images/Logos/blizz-logo-white.png" />
               </div>
             </div>
           </React.Fragment>
