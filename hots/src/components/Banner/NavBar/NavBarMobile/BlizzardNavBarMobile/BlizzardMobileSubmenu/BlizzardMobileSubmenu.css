@@ -1,0 +1,28 @@
+.blizzMobileToggleContainer {
+  width: 100%;
+  background: #000;
+  animation-name: opacity1;
+  animation-duration: 200ms;
+}
+
+.blizzMobileToggleContainer p {
+  padding: 10px 20px;
+}
+
+.blizzMobileToggleContainer ul {
+  width: 100%;
+}
+
+.blizzMobileToggleContainer img {
+  width: 22px;
+}
+
+.blizzMobileToggleContainer small {
+  margin-left: 10px;
+}
+
+.blizzMobileToggleContainer a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}

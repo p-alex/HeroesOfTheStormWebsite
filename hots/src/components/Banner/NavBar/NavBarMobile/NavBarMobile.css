@@ -15,6 +15,7 @@
   animation-name: opacity1;
   animation-duration: 400ms;
   display: none;
+  overflow: scroll;
 }
 
 .navBarMobile img {
@@ -42,7 +43,6 @@
 
 .navBarMobile ul {
   text-align: left;
-  margin-bottom: 50px;
 }
 
 .navBarMobile ul li a {
@@ -62,7 +62,7 @@
 .play-free {
   display: block;
   width: 90%;
-  margin: auto;
+  margin: 50px auto auto auto;
   padding: 15px;
   background: rgb(255, 165, 0);
   background: linear-gradient(180deg, #ff9500 0%, #f50 100%);
@@ -81,6 +81,16 @@
 
 @media screen and (max-width: 800px) {
   .navBarMobile {
+    display: block;
+  }
+  .NavBarMobile-game-links {
+    background: rgba(0, 0, 0, 0.3);
+    margin-bottom: 0;
+    padding: 0;
+    display: none;
+    overflow: hidden;
+  }
+  .NavBarMobile-game-links.games-links-active {
     display: block;
   }
 }

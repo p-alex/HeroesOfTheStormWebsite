@@ -1,44 +1,64 @@
 import React, { Component } from "react";
 import "./NavBar.css";
 import NavBarMobile from "./NavBarMobile/NavBarMobile";
+import BlizzardNavBarMobile from "./NavBarMobile/BlizzardNavBarMobile/BlizzardNavBarMobile";
 
 class NavBar extends Component {
   state = {
-    isOpen: false
+    isNavBarOpen: false,
+    isBlizzNavBarOpen: false
   };
   toggleNavBarHandler = () => {
-    if (this.state.isOpen) {
-      this.setState({ isOpen: false });
+    if (this.state.isNavBarOpen) {
+      this.setState({ isNavBarOpen: false });
     } else {
-      this.setState({ isOpen: true });
+      this.setState({ isNavBarOpen: true });
+    }
+  };
+  toggleBlizzNavBarHandler = () => {
+    if (this.state.isBlizzNavBarOpen) {
+      this.setState({ isBlizzNavBarOpen: false });
+    } else {
+      this.setState({ isBlizzNavBarOpen: true });
     }
   };
   render() {
     return (
       <React.Fragment>
         <nav className="navBarMobilePlaceholder">
-          <div className="hamburger">
-            <img
-              src="/images/Icons/hamburger-icon.png"
-              onClick={this.toggleNavBarHandler}
-            />
+          <div className="hamburger" onClick={this.toggleNavBarHandler}>
+            <img src="/images/Icons/hamburger-icon.png" />
           </div>
 
           <img src="/images/Logos/hots-logo-big.png" />
-          <p>Stuff</p>
+          <div
+            className="BlizzMobile-icon"
+            onClick={this.toggleBlizzNavBarHandler}
+          >
+            <img src="/images/icons/BlizzMobile-icon.png" />
+          </div>
         </nav>
         <NavBarMobile
-          isOpen={this.state.isOpen}
-          close={this.toggleNavBarHandler}
+          isNavBarOpen={this.state.isNavBarOpen}
+          closeNavBar={this.toggleNavBarHandler}
+        />
+        <BlizzardNavBarMobile
+          isBlizzNavBarOpen={this.state.isBlizzNavBarOpen}
+          closeBlizzNavBar={this.toggleBlizzNavBarHandler}
         />
         <nav className="navBar">
           <div className="navBar-logo-links">
-            <a href="https://heroesofthestorm.com/en-us/" className="logo-big">
+            <a
+              href="https://heroesofthestorm.com/en-us/"
+              className="logo-big"
+              target="_blank"
+            >
               <img src="/images/Logos/hots-logo-big.png" alt="logo" />
             </a>
             <a
               href="https://heroesofthestorm.com/en-us/"
               className="logo-small"
+              target="_blank"
             >
               <img src="/images/Logos/hots-logo-small.png" alt="logo" />
             </a>

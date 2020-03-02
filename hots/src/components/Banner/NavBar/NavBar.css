@@ -48,6 +48,7 @@
 }
 
 .play-free-btn a {
+  font-weight: bold;
   padding: 17px;
   background: rgb(255, 165, 0);
   background: linear-gradient(180deg, #ff9500 0%, #f50 100%);
@@ -167,7 +168,26 @@
     cursor: pointer;
   }
   .hamburger img {
-    width: 30px;
-    opacity: 0.8;
+    width: 22px;
+    opacity: 0.7;
+  }
+
+  .hamburger:hover img {
+    opacity: 1;
+  }
+  .BlizzMobile-icon {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .BlizzMobile-icon img {
+    width: 22px;
+    opacity: 0.7;
+  }
+
+  .BlizzMobile-icon:hover img {
+    opacity: 1;
   }
 }

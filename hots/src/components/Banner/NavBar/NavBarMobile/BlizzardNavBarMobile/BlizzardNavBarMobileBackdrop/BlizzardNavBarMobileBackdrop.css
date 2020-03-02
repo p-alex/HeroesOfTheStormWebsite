@@ -1,0 +1,17 @@
+.BlizzardNavBarMobileBackdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  animation-name: opacity1;
+  animation-duration: 400ms;
+  z-index: 1;
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .BlizzardNavBarMobileBackdrop {
+    display: block;
+  }
+}
