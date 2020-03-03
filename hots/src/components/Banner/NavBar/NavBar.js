@@ -47,7 +47,7 @@ class NavBar extends Component {
             className="BlizzMobile-icon"
             onClick={this.toggleBlizzNavBarHandler}
           >
-            <img src="/images/icons/BlizzMobile-icon.png" />
+            <img src="/images/Icons/BlizzMobile-icon.png" />
           </div>
         </nav>
         <NavBarMobile

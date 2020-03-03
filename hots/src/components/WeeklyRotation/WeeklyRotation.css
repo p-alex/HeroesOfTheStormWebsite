@@ -51,7 +51,6 @@
   text-shadow: 0px 2px 10px black;
   box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.664);
   width: 350px;
-  margin-top: 60px;
 }
 .latest-champs {
   height: 100%;
@@ -61,9 +60,6 @@
 
 .champ1 {
   margin: 20px 0;
-}
-
-.champ2 {
 }
 
 .champs {
@@ -113,7 +109,7 @@
   .latest-champs {
     position: relative;
     display: flex;
-    margin-top: 150px;
+    margin-top: 75px;
     align-items: center;
     flex-direction: column;
     width: 100%;
@@ -153,11 +149,10 @@
   .latest-champs {
     position: relative;
     display: flex;
-    top: -250px;
+    top: -40px;
     align-items: center;
     flex-direction: column;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
     height: auto;
     border-right: solid 1px rgba(128, 128, 128, 0.466);
   }
@@ -202,7 +197,7 @@
   }
   .play-as a {
     position: relative;
-    bottom: -400px;
+    bottom: -440px;
     width: 250px;
   }
 }
@@ -210,14 +205,21 @@
 @media screen and (max-width: 700px) {
   .weekly-rotation-container {
     flex-direction: column;
+    position: relative;
+    top: -30px;
     height: 900px;
   }
   .latest-champs {
     border: none;
-    width: 400px;
+    width: 100%;
     margin: 0 auto;
     top: -80px;
-    left: 10px;
+  }
+  .play-as-latest-champs {
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
+    width: 100%;
   }
   .latest-champs-img {
     flex-direction: row;
@@ -227,18 +229,17 @@
   .free-champs-rotation {
     position: relative;
     top: -50px;
-    width: 400px;
+    width: 100%;
     margin: auto;
   }
   .play-as {
-    width: 400px;
+    width: 100%;
     margin: auto;
   }
   .play-as a {
     position: relative;
-    top: 720px;
+    top: 710px;
     width: 100%;
     margin: 20px auto;
-    left: 10px;
   }
 }
