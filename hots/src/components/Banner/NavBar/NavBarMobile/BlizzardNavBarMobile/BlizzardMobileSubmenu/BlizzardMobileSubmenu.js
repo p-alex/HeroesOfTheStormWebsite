@@ -70,11 +70,21 @@ class BlizzardMobileSubmenu extends Component {
             <ul>{blizzGamesList}</ul>
             <p>ACTIVISION</p>
             <ul>{activisionGamesList}</ul>
+            <a href="/" style={{ borderTop: "solid 1px #0e86ca" }}>
+              More Games
+            </a>
+            <a href="/">Battle.net App</a>
+            <a href="/">Downloads</a>
+            <a href="/">Game Forums</a>
           </div>
         ) : null}
         {this.props.esportsMenu ? (
           <div className="blizzMobileToggleContainer">
             <ul>{esportsList}</ul>
+            <a href="/" style={{ borderTop: "solid 1px #0e86ca" }}>
+              More Competitions
+            </a>
+            <a href="/">Resources</a>
           </div>
         ) : null}
       </React.Fragment>

@@ -80,12 +80,17 @@
 }
 
 .arrow-down {
+  position: relative;
   font-weight: bold;
   color: #00aeff;
   font-size: 14px;
   margin: 3px;
 }
-
+@media screen and (min-width: 1921px) {
+  .blizz-nav-content {
+    width: 60%;
+  }
+}
 @media screen and (max-width: 1400px) {
   .blizz-nav-content {
     position: relative;

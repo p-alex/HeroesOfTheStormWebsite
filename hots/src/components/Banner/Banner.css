@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   background: #111;
+  border-bottom: solid #000 2px;
 }
 
 .banner video {
@@ -69,7 +70,11 @@
 .dot.dot-active {
   background: #ff9500;
 }
-
+@media screen and (min-width: 1921px) {
+  .call-to-action {
+    width: 60%;
+  }
+}
 @media screen and (max-width: 1400px) {
   .call-to-action {
     width: 90%;
@@ -84,14 +89,14 @@
   .banner {
     background: url("/images/Backgrounds/deathwing-bg.jpg") no-repeat center
       center/cover;
-    height: 500px;
+    height: 450px;
     border-bottom: solid rgba(46, 46, 226, 0.5) 2px;
   }
 
   .call-to-action {
     position: absolute;
     width: 90%;
-    top: 170px;
+    top: 140px;
   }
 
   .call-to-action p {
@@ -106,7 +111,7 @@
   .call-to-action {
     position: absolute;
     width: 90%;
-    top: 200px;
+    top: 140px;
   }
   .call-to-action a {
     display: block;

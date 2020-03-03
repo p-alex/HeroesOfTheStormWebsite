@@ -6,7 +6,19 @@ import BlizzardNavBarMobile from "./NavBarMobile/BlizzardNavBarMobile/BlizzardNa
 class NavBar extends Component {
   state = {
     isNavBarOpen: false,
-    isBlizzNavBarOpen: false
+    isBlizzNavBarOpen: false,
+    isGamesListOpen: false
+  };
+  toggleGames = e => {
+    e.preventDefault();
+    document
+      .getElementById("games-list-desktop")
+      .classList.toggle("games-list-desktop-active");
+    if (this.state.isGamesListOpen) {
+      this.setState({ isGamesListOpen: false });
+    } else {
+      this.setState({ isGamesListOpen: true });
+    }
   };
   toggleNavBarHandler = () => {
     if (this.state.isNavBarOpen) {
@@ -62,9 +74,45 @@ class NavBar extends Component {
             >
               <img src="/images/Logos/hots-logo-small.png" alt="logo" />
             </a>
-            <ul>
+            <ul className="navBar-logo-links-ul">
               <li>
-                <a href="/">GAME</a>
+                <a href="/" onClick={this.toggleGames}>
+                  GAME{" "}
+                  <span
+                    className="arrow-down"
+                    id="games-toggle"
+                    style={{
+                      fontSize: "15px",
+                      color: "white",
+                      bottom: "1px"
+                    }}
+                  >
+                    {this.state.isGamesListOpen ? "˄" : "˅"}
+                  </span>
+                </a>
+                <ul className="NavBarGamesToggle" id="games-list-desktop">
+                  <li>
+                    <a href="/">Overview</a>
+                  </li>
+                  <li>
+                    <a href="/">Roles</a>
+                  </li>
+                  <li>
+                    <a href="/">Modes</a>
+                  </li>
+                  <li>
+                    <a href="/">Heroes Brawl</a>
+                  </li>
+                  <li>
+                    <a href="/">Battlegrounds</a>
+                  </li>
+                  <li>
+                    <a href="/">Ranked Play</a>
+                  </li>
+                  <li>
+                    <a href="/">Media</a>
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href="/">HEROES</a>

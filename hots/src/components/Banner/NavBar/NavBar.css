@@ -21,18 +21,18 @@
   display: flex;
 }
 
-.navBar-logo-links ul {
+.navBar-logo-links-ul {
   display: flex;
   position: relative;
   align-items: center;
   left: 230px;
 }
 
-.navBar-logo-links ul li a {
+.navBar-logo-links-ul li a {
   padding: 17px;
 }
 
-.navBar-logo-links ul li a:hover {
+.navBar-logo-links-ul li a:hover {
   background: rgb(0, 249, 255);
   background: linear-gradient(
     0deg,
@@ -66,10 +66,40 @@
   display: none;
 }
 
-.navBarMobilePlaceholder {
+.NavBarGamesToggle {
+  background: rgb(9, 39, 121);
+  background: linear-gradient(
+    180deg,
+    rgba(9, 39, 121, 1) 0%,
+    rgba(26, 55, 170, 1) 51%,
+    rgba(46, 46, 226, 1) 100%
+  );
+  box-shadow: inset 0 0 5px rgba(165, 165, 165, 0.63);
+  position: absolute;
+  top: 40px;
+  z-index: 1;
+  width: 200px;
+  padding: 10px 0;
   display: none;
 }
 
+.NavBarGamesToggle li a {
+  padding: 7px 20px;
+  display: block;
+}
+
+.NavBarGamesToggle.games-list-desktop-active {
+  display: block;
+}
+
+.navBarMobilePlaceholder {
+  display: none;
+}
+@media screen and (min-width: 1921px) {
+  .navBar {
+    width: 60%;
+  }
+}
 @media screen and (max-width: 1400px) {
   .logo-big {
     display: none;
@@ -99,7 +129,7 @@
     filter: brightness(1.2);
   }
 
-  .navBar-logo-links ul {
+  .navBar-logo-links-ul {
     left: 70px;
     font-size: 14px;
   }
