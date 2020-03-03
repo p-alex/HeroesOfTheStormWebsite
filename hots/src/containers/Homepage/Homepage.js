@@ -2,6 +2,7 @@ import React from "react";
 import BlizzardNavBar from "../../components/BlizzardNavBar/BlizzardNavBar";
 import Banner from "../../components/Banner/Banner";
 import WeeklyRotation from "../../components/WeeklyRotation/WeeklyRotation";
+import Battlegrounds from "../../components/Battlegrounds/Battlegrounds";
 import "./Homepage.css";
 const homePage = props => {
   return (
@@ -10,6 +11,7 @@ const homePage = props => {
       <div className="wrapper">
         <Banner />
         <WeeklyRotation />
+        <Battlegrounds />
       </div>
     </React.Fragment>
   );

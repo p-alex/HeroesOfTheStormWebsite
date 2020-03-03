@@ -52,7 +52,7 @@ class BlizzardNavBarMobile extends Component {
                 <span>X</span>
               </div>
               <div className="BlizzardNavBarMobile-logo">
-                <img src="/images/logos/blizz-logo.png" alt="logo" />
+                <img src="/images/Logos/blizz-logo.png" alt="logo" />
               </div>
               <ul className="BlizzardNavBarMobile-account">
                 <li>

@@ -1,0 +1,96 @@
+.battlegrounds {
+  width: 100%;
+  position: relative;
+  top: 0;
+  background: url("/Images/Backgrounds/battlegrounds-spate.jpg") no-repeat
+    center center/cover;
+}
+
+.battlegrounds-container {
+  position: relative;
+  width: var(--containerWidth);
+  margin: auto;
+  display: flex;
+}
+
+.battlegrounds-explore {
+  position: relative;
+  width: 420px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 500px;
+  margin-right: 40px;
+}
+
+.battlegrounds-explore h3 {
+  color: rgb(177, 1, 177);
+}
+
+.battlegrounds-explore h1 {
+  font-size: 35px;
+}
+.battlegrounds-explore p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.battlegrounds-explore a {
+  display: block;
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+  padding: 17px 60px;
+  background: rgb(50, 4, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(50, 4, 255, 1) 0%,
+    rgba(8, 8, 96, 1) 100%
+  );
+  text-shadow: 0px 2px 10px black;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.664);
+  width: 100%;
+}
+
+.battlegrounds-images {
+  position: relative;
+  width: 100%;
+  background: url("/Images/Backgrounds/battlegrounds.jpg") no-repeat center
+    center/cover;
+}
+@media screen and (min-width: 1921px) {
+  .battlegrounds-container {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .battlegrounds-explore {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+    margin-right: 40px;
+  }
+  .battlegrounds-container {
+    position: relative;
+    width: var(--containerWidth);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .battlegrounds-images {
+    height: 350px;
+    position: relative;
+    top: -100px;
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .battlegrounds-container {
+    width: 90%;
+  }
+}
