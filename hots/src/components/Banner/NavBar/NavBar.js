@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./NavBar.css";
 import NavBarMobile from "./NavBarMobile/NavBarMobile";
-import BlizzardNavBarMobile from "./NavBarMobile/BlizzardNavBarMobile/BlizzardNavBarMobile";
+import BlizzardNavBarMobile from "../../BlizzardNavBar/BlizzardNavBarMobile/BlizzardNavBarMobile";
 
 class NavBar extends Component {
   state = {

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Banner.css";
-import NavBar from "./NavBar/NavBar";
 
 class Banner extends Component {
   state = {
@@ -16,13 +15,12 @@ class Banner extends Component {
           <source src="/video/deathwing.mp4" />
         </video>
 
-        <NavBar />
         <div className="call-to-action">
           <h1>Defy MOBA Expectations</h1>
           <p>Epic Heroes and Relentless Action on Diverse Battlegrounds</p>
           <a href="/">PLAY FREE NOW</a>
         </div>
-        <div className="dots">
+        {/*<div className="dots">
           <div
             className={this.state.slide === 1 ? "dot dot-active" : "dot"}
             onClick={() => this.slideHandler(1)}
@@ -43,7 +41,7 @@ class Banner extends Component {
             className={this.state.slide === 5 ? "dot dot-active" : "dot"}
             onClick={() => this.slideHandler(5)}
           ></div>
-        </div>
+    </div>*/}
       </header>
     );
   }

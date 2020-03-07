@@ -1,0 +1,67 @@
+.DownloadHeroes {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: url("/images/Backgrounds/download2.jpg") no-repeat center
+    center/cover;
+  display: flex;
+  align-items: center;
+}
+.DownloadHeroes-Container {
+  position: relative;
+  width: var(--containerWidth);
+  margin: auto;
+  text-align: left;
+  height: 200px;
+}
+.DownloadHeroes-Container h3 {
+  color: rgb(177, 1, 177);
+  text-shadow: 0 0 10px black;
+}
+
+.DownloadHeroes-Container h1 {
+  font-size: 45px;
+  margin: 10px 0;
+  text-shadow: 0 0 10px black;
+}
+.read-requirements-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.read-requirements-container img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.read-requirements-container a {
+  color: orange;
+  text-decoration: underline;
+  text-shadow: 0 0 10px black;
+}
+
+.play-free-download {
+  position: relative;
+  font-weight: bold;
+  padding: 17px 120px;
+  background: rgb(255, 165, 0);
+  background: linear-gradient(180deg, #ff9500 0%, #f50 100%);
+  text-shadow: 0px 2px 10px black;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.664);
+}
+
+@media screen and (min-width: 1921px) {
+  .DownloadHeroes-Container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .DownloadHeroes-Container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

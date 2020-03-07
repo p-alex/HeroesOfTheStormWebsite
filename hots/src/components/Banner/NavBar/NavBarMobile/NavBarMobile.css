@@ -4,6 +4,7 @@
   height: 100vh;
   z-index: 115;
   left: 0;
+  top: 0;
   background: rgb(9, 39, 121);
   background: linear-gradient(
     180deg,

@@ -1,7 +1,10 @@
 .WeeklyRotation {
+  position: relative;
   background: url("/images/Backgrounds/champs-bg.jpg") no-repeat center
     center/cover;
   padding: 50px 0;
+  z-index: 2;
+  border-bottom: solid #000 2px;
 }
 
 .weekly-rotation-container {
@@ -56,6 +59,16 @@
   height: 100%;
   position: relative;
   margin-left: 50px;
+}
+
+.latest-champs p {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.latest-champs p:first-child {
+  font-weight: normal;
+  font-size: 16px;
 }
 
 .champ1 {
@@ -238,7 +251,7 @@
   }
   .play-as a {
     position: relative;
-    top: 710px;
+    top: 720px;
     width: 100%;
     margin: 20px auto;
   }

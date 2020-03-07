@@ -7,16 +7,18 @@
   display: flex;
   justify-content: center;
   box-shadow: 0 25px 20px #999;
-  z-index: 4;
+  z-index: 51;
 }
 
 .blizzSubmenu-container {
   width: var(--containerWidth);
   display: flex;
+  z-index: 4;
 }
 
 .games {
   width: 100%;
+  z-index: 4;
 }
 
 .games:first-child {
@@ -83,6 +85,7 @@
   width: 100%;
   border-top: solid #222 1px;
   background: rgba(0, 0, 0, 0.9);
+  z-index: 4;
 }
 
 .blizzSubmenu-bottom ul {
@@ -110,6 +113,7 @@
   animation-duration: 500ms;
   position: relative;
   bottom: 15px;
+  z-index: 4;
 }
 
 .esports-list li a {
