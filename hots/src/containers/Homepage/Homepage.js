@@ -6,6 +6,8 @@ import Battlegrounds from "../../components/Battlegrounds/Battlegrounds";
 import "./Homepage.css";
 import NavBar from "../../components/Banner/NavBar/NavBar";
 import DownloadHeroes from "../../components/DownloadHeroes/DownloadHeroes";
+import Social from "../../components/Social/Social";
+import Footer from "../../components/Footer/Footer";
 const homePage = props => {
   return (
     <React.Fragment>
@@ -17,6 +19,8 @@ const homePage = props => {
         <WeeklyRotation />
         <Battlegrounds />
         <DownloadHeroes />
+        <Social />
+        <Footer />
       </div>
     </React.Fragment>
   );

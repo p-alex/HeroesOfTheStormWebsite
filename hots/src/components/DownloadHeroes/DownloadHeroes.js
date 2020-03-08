@@ -13,7 +13,7 @@ const downloadHeroes = props => {
           <a href="/">Read System Requirments</a>
         </div>
         <a href="/" className="play-free-download">
-          PLAY FREE NOW
+          PLAY FREE
         </a>
       </div>
     </section>

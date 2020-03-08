@@ -1,6 +1,6 @@
 .BlizzardNavBarMobile {
   position: fixed;
-  background: rgb(10, 10, 10);
+  background: rgb(12, 12, 12);
   width: 65%;
   height: 100vh;
   top: 0;
@@ -66,5 +66,11 @@
 @media screen and (max-width: 800px) {
   .BlizzardNavBarMobile {
     display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .BlizzardNavBarMobile {
+    width: 100%;
   }
 }
