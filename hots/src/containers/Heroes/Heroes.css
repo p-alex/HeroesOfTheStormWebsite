@@ -1,0 +1,45 @@
+.Heroes {
+  position: relative;
+  width: 100%;
+  top: -50px;
+  padding-top: 150px;
+}
+
+.HeroesContainer {
+  position: relative;
+  width: var(--containerWidth);
+  margin: auto;
+  overflow: hidden;
+}
+
+.HeroesList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 65%;
+}
+
+.HeroesList li {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.HeroesList li p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.HeroesList li img {
+  border: solid 4px transparent;
+}
+
+@media screen and (min-width: 1921px) {
+  .HeroesContainer {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+  }
+}

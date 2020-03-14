@@ -16,7 +16,7 @@ class WeeklyRotation extends Component {
       { name: "Leoric" },
       { name: "Deathwing", type: "Bruiser" },
       { name: "Yrel" },
-      { name: "Qhira", type: "Melee Assassin" },
+      { name: "Qhyra", type: "Melee Assassin" },
       { name: "Tassador" }
     ]
   };
@@ -26,7 +26,7 @@ class WeeklyRotation extends Component {
         <li>
           <a href="/">
             <img
-              src={"/images/Champs Profile/" + champ.name + ".png"}
+              src={"/images/HeroesProfile/" + champ.name + ".png"}
               alt={champ.name}
             />
             <p>{champ.name}</p>
@@ -52,12 +52,12 @@ class WeeklyRotation extends Component {
               <p style={{ textAlign: "left" }}>LATEST</p>
               <div className="latest-champs-img">
                 <div className="champ1">
-                  <img src="/images/Champs Profile/Deathwing.png"></img>
+                  <img src="/images/HeroesProfile/Deathwing.png"></img>
                   <p>Deathwing</p>
                   <small>Bruiser</small>
                 </div>
                 <div className="champ2">
-                  <img src="/images/Champs Profile/Qhira.png"></img>
+                  <img src="/images/HeroesProfile/Qhyra.png"></img>
                   <p>Qhira</p>
                   <small>Melee Assassin</small>
                 </div>

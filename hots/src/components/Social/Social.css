@@ -4,6 +4,8 @@
   background: url("/images/Backgrounds/champs-bg.jpg") no-repeat center
     center/cover;
   display: flex;
+  position: relative;
+  z-index: 1;
   border-top: solid 2px rgba(0, 0, 0, 0.322);
 }
 

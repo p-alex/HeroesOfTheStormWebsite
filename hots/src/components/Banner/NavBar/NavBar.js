@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./NavBar.css";
 import NavBarMobile from "./NavBarMobile/NavBarMobile";
 import BlizzardNavBarMobile from "../../BlizzardNavBar/BlizzardNavBarMobile/BlizzardNavBarMobile";
+import { Link } from "react-router-dom";
 
 class NavBar extends Component {
   state = {
@@ -115,7 +116,7 @@ class NavBar extends Component {
                 </ul>
               </li>
               <li>
-                <a href="/">HEROES</a>
+                <Link to="/heroes">HEROES</Link>
               </li>
               <li>
                 <a href="/">LEADERBOARDS</a>

@@ -8,6 +8,7 @@ import NavBar from "../../components/Banner/NavBar/NavBar";
 import DownloadHeroes from "../../components/DownloadHeroes/DownloadHeroes";
 import Social from "../../components/Social/Social";
 import Footer from "../../components/Footer/Footer";
+import { Route, Switch } from "react-router-dom";
 const homePage = props => {
   return (
     <React.Fragment>
@@ -22,6 +23,7 @@ const homePage = props => {
         <Social />
         <Footer />
       </div>
+      <Route path="/champions" component="" />
     </React.Fragment>
   );
 };
