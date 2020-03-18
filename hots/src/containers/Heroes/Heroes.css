@@ -1,38 +1,93 @@
 .Heroes {
   position: relative;
   width: 100%;
-  top: -50px;
-  padding-top: 150px;
+  top: 0px;
+  padding-top: 350px;
+  padding-bottom: 60px;
+  background: url("/images/Backgrounds/heroes-bg.jpg") no-repeat center
+    center/cover;
+  margin-top: -50px;
 }
 
 .HeroesContainer {
   position: relative;
   width: var(--containerWidth);
+  display: flex;
   margin: auto;
-  overflow: hidden;
+  justify-content: space-between;
+}
+
+.HeroesContainer-title {
+  position: absolute;
+  top: -180px;
+  font-size: 45px;
+  text-shadow: 0 5px 3px #111;
 }
 
 .HeroesList {
   display: flex;
   flex-wrap: wrap;
-  width: 65%;
+  justify-content: left;
+  width: 100%;
 }
 
 .HeroesList li {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  padding: 20px;
-  margin-bottom: 20px;
+  min-width: 100px;
+  padding-right: 30px;
+  margin-bottom: 40px;
   cursor: pointer;
+  height: 150px;
 }
 
 .HeroesList li p {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .HeroesList li img {
   border: solid 4px transparent;
+  width: 120px;
+  height: 120px;
+}
+
+.HeroesFilter {
+  position: absolute;
+  display: flex;
+  top: -110px;
+  font-size: 18px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.HeroesFilter p {
+  color: orange;
+  width: 70px;
+}
+
+.Role {
+  display: flex;
+  align-items: center;
+}
+
+.Roles {
+  display: flex;
+}
+
+.Universe {
+  display: flex;
+}
+
+.Universe li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.Roles li {
+  padding: 10px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1921px) {
@@ -40,6 +95,64 @@
     position: relative;
     width: 60%;
     margin: auto;
-    overflow: hidden;
+  }
+  .HeroesList {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .HeroesList {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .HeroesList {
+    justify-content: center;
+    width: 100%;
+  }
+  .HeroesList li img {
+    border: solid 4px transparent;
+    width: 80px;
+    height: 80px;
+  }
+  .HeroesList li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 120px;
+    align-items: center;
+    margin-bottom: 40px;
+    cursor: pointer;
+    height: 150px;
+  }
+  .HeroesContainer-title {
+    position: absolute;
+    top: -200px;
+    font-size: 45px;
+    text-shadow: 0 5px 3px #111;
+  }
+  .HeroesFilter {
+    position: absolute;
+    display: flex;
+    top: -130px;
+    font-size: 18px;
+    width: 100%;
+    flex-direction: column;
+    word-break: keep-all;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .HeroesContainer {
+    position: relative;
+    width: 95%;
+    margin: auto;
+  }
+  .HeroesList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
   }
 }

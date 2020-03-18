@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./NavBarMobile.css";
 import NavBarMobileBackdrop from "./NavBarMobileBackdrop/NavBarMobileBackdrop";
 import BlizzardNavBarMobile from "../../../BlizzardNavBar/BlizzardNavBarMobile/BlizzardNavBarMobile";
-
+import { Link } from "react-router-dom";
 class NavBarMobile extends Component {
   state = {
     gameMenuOpen: false
@@ -82,7 +82,7 @@ class NavBarMobile extends Component {
                   </ul>
                 </li>
                 <li>
-                  <a href="/">HEROES</a>
+                  <Link to="/heroes">HEROES</Link>
                 </li>
                 <li>
                   <a href="/">LEADERBOARDS</a>

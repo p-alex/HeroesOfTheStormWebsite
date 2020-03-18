@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./HeroCard.css";
-
 class HeroCard extends Component {
   state = {
     difficulty: ""
   };
+
   componentDidMount() {
     console.log(this.props);
     if (
@@ -30,28 +30,35 @@ class HeroCard extends Component {
   }
   render() {
     return (
-      <div
-        className="HeroCard"
-        style={{
-          backgroundImage: "/images/HeroesCards/" + `${this.props.imgURL}`
-        }}
-      >
-        <div className="HeroCard-imgname">
-          <img src={"/images/HeroesCards/" + this.props.imgURL} />
-          <h1>{this.props.name}</h1>
-        </div>
-
-        <div className="HeroCard-panel">
-          <p>Role</p>
-          <p className="panel-stat">{this.props.type}</p>
-        </div>
-        <div className="HeroCard-panel">
-          <p>Difficulty</p>
-          <p className="panel-stat">{this.state.difficulty}</p>
-        </div>
-        <div className="HeroCard-panel">
-          <p>Universe</p>
-          <p className="panel-stat">{this.props.universe}</p>
+      <div className="HeroCard-container">
+        <div className="HeroCard">
+          <div
+            className="HeroCard-background"
+            style={{
+              backgroundImage:
+                "url(/images/HeroesCards/" + `${this.props.imgURL}` + ")"
+            }}
+          ></div>
+          <div className="HeroCard-name">
+            <h1>{this.props.name}</h1>
+          </div>
+          <div className="panels-container">
+            <div className="HeroCard-panel">
+              <p>Role</p>
+              <p className="panel-stat">{this.props.type}</p>
+            </div>
+            <div className="HeroCard-panel">
+              <p>Difficulty</p>
+              <p className="panel-stat">{this.state.difficulty}</p>
+            </div>
+            <div className="HeroCard-panel">
+              <p>Universe</p>
+              <p className="panel-stat">{this.props.universe}</p>
+            </div>
+          </div>
+          <div className="HeroCard-learn">
+            <a href="/">LEARN MORE</a>
+          </div>
         </div>
       </div>
     );

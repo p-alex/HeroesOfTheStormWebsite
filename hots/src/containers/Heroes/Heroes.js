@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import ChampionStats from "../../components/ChampionStats/ChampionStats";
 import BlizzardNavBar from "../../components/BlizzardNavBar/BlizzardNavBar";
 import NavBar from "../../components/Banner/NavBar/NavBar";
 import DownloadHeroes from "../../components/DownloadHeroes/DownloadHeroes";
 import Social from "../../components/Social/Social";
 import Footer from "../../components/Footer/Footer";
 import HeroCard from "./HeroCard/HeroCard";
+import FlipMove from "react-flip-move";
 import "./Heroes.css";
 class ChampionShowcase extends Component {
   state = {
     selectedHero: "Deathwing",
+    selectedRoleFilter: "All",
+    selectedUniverseFilter: "All",
     champions: [
       {
         name: "Deathwing",
@@ -255,25 +257,81 @@ class ChampionShowcase extends Component {
     e.preventDefault();
     this.setState({ selectedHero: name });
   };
+
+  selectRoleFilterHandler = filter => {
+    this.setState({ selectedRoleFilter: filter });
+  };
+
+  selectUniverseFilterHandler = universe => {
+    this.setState({ selectedUniverseFilter: universe });
+  };
   render() {
-    const heroes = this.state.champions.map(champ => {
+    let Champs = [...this.state.champions];
+    const filterdChamps = Champs.filter(item => {
+      if (
+        this.state.selectedRoleFilter !== "All" &&
+        this.state.selectedUniverseFilter !== "All"
+      ) {
+        return (
+          item.type === this.state.selectedRoleFilter &&
+          item.universe === this.state.selectedUniverseFilter
+        );
+      } else if (
+        this.state.selectedRoleFilter === "All" &&
+        this.state.selectedUniverseFilter !== "All"
+      ) {
+        return (
+          item.type !== this.state.selectedRoleFilter &&
+          item.universe === this.state.selectedUniverseFilter
+        );
+      } else if (
+        this.state.selectedRoleFilter !== "All" &&
+        this.state.selectedUniverseFilter === "All"
+      ) {
+        return (
+          item.type === this.state.selectedRoleFilter &&
+          item.universe !== this.state.selectedUniverseFilter
+        );
+      } else if (
+        this.state.selectedRoleFilter === "All" &&
+        this.state.selectedUniverseFilter === "All"
+      ) {
+        return (
+          item.type !== this.state.selectedRoleFilter &&
+          item.universe !== this.state.selectedUniverseFilter
+        );
+      }
+    });
+    console.log(
+      filterdChamps,
+      this.state.selectedRoleFilter,
+      this.state.selectedUniverseFilter
+    );
+    const heroes = filterdChamps.map(champ => {
       return (
         <li
           key={champ.name}
           onClick={e => this.selectHeroHandler(champ.name, e)}
         >
           {this.state.selectedHero === champ.name ? (
-            <img
-              src={"/images/HeroesProfile/" + champ.name + ".png"}
-              style={{
-                border: "solid orange 4px",
-                borderRadius: "50%"
-              }}
-            />
+            <React.Fragment>
+              <img
+                src={"/images/HeroesProfile/" + champ.name + ".png"}
+                style={{
+                  border: "solid white 4px",
+                  borderRadius: "50%",
+                  boxShadow: "0 0 10px white",
+                  filter: "brightness(1.2)"
+                }}
+              />
+              <p style={{ fontWeight: "bold" }}>{champ.name}</p>
+            </React.Fragment>
           ) : (
-            <img src={"/images/HeroesProfile/" + champ.name + ".png"} />
+            <React.Fragment>
+              <img src={"/images/HeroesProfile/" + champ.name + ".png"} />
+              <p style={{ color: "white" }}>{champ.name}</p>
+            </React.Fragment>
           )}
-          <p>{champ.name}</p>
         </li>
       );
     });
@@ -305,7 +363,162 @@ class ChampionShowcase extends Component {
           <NavBar />
           <section className="Heroes">
             <div className="HeroesContainer">
-              <ul className="HeroesList">{heroes}</ul>
+              <div className="HeroesFilter">
+                <div className="Role">
+                  <p style={{ marginRight: "20px" }}>Role: </p>
+                  <ul className="Roles">
+                    <li
+                      style={
+                        this.state.selectedRoleFilter === "All"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() => this.selectRoleFilterHandler("All")}
+                    >
+                      All
+                    </li>
+                    <li
+                      style={
+                        this.state.selectedRoleFilter === "tank"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() => this.selectRoleFilterHandler("tank")}
+                    >
+                      Tank
+                    </li>
+                    <li
+                      style={
+                        this.state.selectedRoleFilter === "bruiser"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() => this.selectRoleFilterHandler("bruiser")}
+                    >
+                      Bruiser
+                    </li>
+                    <li
+                      style={
+                        this.state.selectedRoleFilter === "support"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() => this.selectRoleFilterHandler("support")}
+                    >
+                      Support
+                    </li>
+                    <li
+                      style={
+                        this.state.selectedRoleFilter === "healer"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() => this.selectRoleFilterHandler("healer")}
+                    >
+                      Healer
+                    </li>
+                    <li
+                      style={
+                        this.state.selectedRoleFilter === "ranged assassin"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() =>
+                        this.selectRoleFilterHandler("ranged assassin")
+                      }
+                    >
+                      Ranged Assassin
+                    </li>
+                    <li
+                      style={
+                        this.state.selectedRoleFilter === "melee assassin"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() =>
+                        this.selectRoleFilterHandler("melee assassin")
+                      }
+                    >
+                      Melee Assassin
+                    </li>
+                  </ul>
+                </div>
+                <div className="Role">
+                  <p style={{ marginRight: "20px" }}>Universe: </p>
+                  <ul className="Universe">
+                    <li
+                      style={
+                        this.state.selectedUniverseFilter === "All"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() => this.selectUniverseFilterHandler("All")}
+                    >
+                      All
+                    </li>
+                    <li
+                      style={
+                        this.state.selectedUniverseFilter === "Warcraft"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() =>
+                        this.selectUniverseFilterHandler("Warcraft")
+                      }
+                    >
+                      Warcraft
+                    </li>
+                    <li
+                      style={
+                        this.state.selectedUniverseFilter === "Starcraft"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() =>
+                        this.selectUniverseFilterHandler("Starcraft")
+                      }
+                    >
+                      Starcraft
+                    </li>
+                    <li
+                      style={
+                        this.state.selectedUniverseFilter === "Diablo"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() => this.selectUniverseFilterHandler("Diablo")}
+                    >
+                      Diablo
+                    </li>
+                    <li
+                      style={
+                        this.state.selectedUniverseFilter === "Nexus"
+                          ? { textDecoration: "underline", fontWeight: "bold" }
+                          : null
+                      }
+                      onClick={() => this.selectUniverseFilterHandler("Nexus")}
+                    >
+                      Nexus
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <h1 className="HeroesContainer-title">Heroes</h1>
+              <ul>
+                <FlipMove
+                  className="HeroesList"
+                  style={{}}
+                  duration={200}
+                  easing="linear"
+                >
+                  {filterdChamps.length > 0 ? (
+                    heroes
+                  ) : (
+                    <p>There are no champions matching your filters!</p>
+                  )}
+                </FlipMove>
+              </ul>
               {heroCard}
             </div>
           </section>
