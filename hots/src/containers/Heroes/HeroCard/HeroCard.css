@@ -1,6 +1,6 @@
 .HeroCard-container {
   position: sticky;
-  width: 500px;
+  width: 450px;
   border: solid red 1px;
   top: 150px;
   height: 100%;
@@ -10,7 +10,7 @@
 }
 .HeroCard {
   position: relative;
-  width: 500px;
+  width: 450px;
   top: 0;
   right: 0;
   height: 100%;
@@ -31,7 +31,8 @@
 
 .HeroCard-panel {
   display: flex;
-  width: 400px;
+  width: 370px;
+  margin: auto;
   align-items: center;
   position: relative;
   background: rgb(9, 39, 121);
