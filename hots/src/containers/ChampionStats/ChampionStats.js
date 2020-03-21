@@ -4,14 +4,10 @@ import NavBar from "../../components/Banner/NavBar/NavBar";
 import DownloadHeroes from "../../components/DownloadHeroes/DownloadHeroes";
 import Social from "../../components/Social/Social";
 import Footer from "../../components/Footer/Footer";
-import HeroCard from "./HeroCard/HeroCard";
-import FlipMove from "react-flip-move";
-import "./Heroes.css";
-class ChampionShowcase extends Component {
+import "./ChampionStats.css";
+
+class ChampionStats extends Component {
   state = {
-    selectedHero: "Deathwing",
-    selectedRoleFilter: "All",
-    selectedUniverseFilter: "All",
     champions: [
       {
         name: "Deathwing",
@@ -1234,294 +1230,113 @@ class ChampionShowcase extends Component {
       }
     ]
   };
-  selectHeroHandler = (name, e) => {
-    e.preventDefault();
-    this.setState({ selectedHero: name });
-  };
-
-  selectRoleFilterHandler = filter => {
-    this.setState({ selectedRoleFilter: filter });
-  };
-
-  selectUniverseFilterHandler = universe => {
-    this.setState({ selectedUniverseFilter: universe });
-  };
+  componentDidMount() {
+    console.log(this.props);
+    console.log(
+      "/images/HeroesCards" + this.props.match.params.heroName + ".jpg"
+    );
+  }
   render() {
-    let Champs = [...this.state.champions];
-    const filterdChamps = Champs.filter(item => {
-      if (
-        this.state.selectedRoleFilter !== "All" &&
-        this.state.selectedUniverseFilter !== "All"
-      ) {
+    const stats = this.state.champions.map(stat => {
+      if (stat.name === this.props.match.params.heroName) {
         return (
-          item.type === this.state.selectedRoleFilter &&
-          item.universe === this.state.selectedUniverseFilter
-        );
-      } else if (
-        this.state.selectedRoleFilter === "All" &&
-        this.state.selectedUniverseFilter !== "All"
-      ) {
-        return (
-          item.type !== this.state.selectedRoleFilter &&
-          item.universe === this.state.selectedUniverseFilter
-        );
-      } else if (
-        this.state.selectedRoleFilter !== "All" &&
-        this.state.selectedUniverseFilter === "All"
-      ) {
-        return (
-          item.type === this.state.selectedRoleFilter &&
-          item.universe !== this.state.selectedUniverseFilter
-        );
-      } else if (
-        this.state.selectedRoleFilter === "All" &&
-        this.state.selectedUniverseFilter === "All"
-      ) {
-        return (
-          item.type !== this.state.selectedRoleFilter &&
-          item.universe !== this.state.selectedUniverseFilter
+          <React.Fragment>
+            <h1 style={{ fontSize: "50px" }}>{stat.name}</h1>
+            <h2 style={{ fontWeight: "normal" }}>{stat.title}</h2>
+            <p style={{ width: "100%", margin: "20px 0" }}>{stat.desc}</p>
+            <div className="HeroStatsContainer">
+              <div className="HeroStats">
+                <div className="damage stat">
+                  <p>Damage:</p>
+                  <div className="BarContainer">
+                    <div
+                      className="damageBar bar"
+                      style={{ width: stat.damage }}
+                    >
+                      <span>
+                        {stat.damage === "100%"
+                          ? stat.damage.slice(0, 2)
+                          : stat.damage.slice(0, 1)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="utility stat">
+                  <p>Utility:</p>
+                  <div className="BarContainer">
+                    <div
+                      className="utilityBar bar"
+                      style={{ width: stat.utility }}
+                    >
+                      <span>
+                        {stat.utility === "100%"
+                          ? stat.utility.slice(0, 2)
+                          : stat.utility.slice(0, 1)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="survivability stat">
+                  <p>Survivability:</p>
+                  <div className="BarContainer">
+                    {" "}
+                    <div
+                      className="survivabilityBar bar"
+                      style={{ width: stat.survivability }}
+                    >
+                      <span>
+                        {stat.survivability === "100%"
+                          ? stat.survivability.slice(0, 2)
+                          : stat.survivability.slice(0, 1)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="complexity stat">
+                  <p>Complexity:</p>
+                  <div className="BarContainer">
+                    <div
+                      className="complexityBar bar"
+                      style={{ width: stat.complexity }}
+                    >
+                      <span>
+                        {stat.complexity === "100%"
+                          ? stat.complexity.slice(0, 2)
+                          : stat.complexity.slice(0, 1)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p>Role:{stat.type}</p>
+          </React.Fragment>
         );
       }
-    });
-    console.log(
-      filterdChamps,
-      this.state.selectedRoleFilter,
-      this.state.selectedUniverseFilter
-    );
-    const heroes = filterdChamps.map(champ => {
-      return (
-        <li
-          key={champ.name}
-          onClick={e => this.selectHeroHandler(champ.name, e)}
-        >
-          {this.state.selectedHero === champ.name ? (
-            <React.Fragment>
-              <img
-                src={"/images/HeroesProfile/" + champ.name + ".png"}
-                style={{
-                  border: "solid white 4px",
-                  borderRadius: "50%",
-                  boxShadow: "0 0 10px white",
-                  filter: "brightness(1.2)"
-                }}
-              />
-              <p style={{ fontWeight: "bold" }}>{champ.name}</p>
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              <img src={"/images/HeroesProfile/" + champ.name + ".png"} />
-              <p style={{ color: "white" }}>{champ.name}</p>
-            </React.Fragment>
-          )}
-        </li>
-      );
-    });
-    const heroCard = this.state.champions.map(card => {
-      return (
-        <React.Fragment key={card.title}>
-          {this.state.selectedHero === card.name ? (
-            <HeroCard
-              name={card.name}
-              title={card.title}
-              desc={card.desc}
-              imgURL={card.imgURL}
-              damage={card.damage}
-              utility={card.utility}
-              survivability={card.survivability}
-              complexity={card.complexity}
-              type={card.type}
-              universe={card.universe}
-              secondForm={card.secondForm}
-            />
-          ) : null}
-        </React.Fragment>
-      );
     });
     return (
       <React.Fragment>
         <BlizzardNavBar />
-        <div className="wrapper">
-          <NavBar />
-          <section className="Heroes">
-            <div className="HeroesContainer">
-              <div className="HeroesFilter">
-                <div className="Role">
-                  <p style={{ marginRight: "20px" }}>Role: </p>
-                  <ul className="Roles">
-                    <li
-                      style={
-                        this.state.selectedRoleFilter === "All"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() => this.selectRoleFilterHandler("All")}
-                    >
-                      All
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedRoleFilter === "tank"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() => this.selectRoleFilterHandler("tank")}
-                    >
-                      Tank
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedRoleFilter === "bruiser"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() => this.selectRoleFilterHandler("bruiser")}
-                    >
-                      Bruiser
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedRoleFilter === "support"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() => this.selectRoleFilterHandler("support")}
-                    >
-                      Support
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedRoleFilter === "healer"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() => this.selectRoleFilterHandler("healer")}
-                    >
-                      Healer
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedRoleFilter === "ranged assassin"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() =>
-                        this.selectRoleFilterHandler("ranged assassin")
-                      }
-                    >
-                      Ranged Assassin
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedRoleFilter === "melee assassin"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() =>
-                        this.selectRoleFilterHandler("melee assassin")
-                      }
-                    >
-                      Melee Assassin
-                    </li>
-                  </ul>
-                </div>
-                <div className="Role">
-                  <p style={{ marginRight: "20px" }}>Universe: </p>
-                  <ul className="Universe">
-                    <li
-                      style={
-                        this.state.selectedUniverseFilter === "All"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() => this.selectUniverseFilterHandler("All")}
-                    >
-                      All
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedUniverseFilter === "Warcraft"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() =>
-                        this.selectUniverseFilterHandler("Warcraft")
-                      }
-                    >
-                      Warcraft
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedUniverseFilter === "Overwatch"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() =>
-                        this.selectUniverseFilterHandler("Overwatch")
-                      }
-                    >
-                      Overwatch
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedUniverseFilter === "Starcraft"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() =>
-                        this.selectUniverseFilterHandler("Starcraft")
-                      }
-                    >
-                      Starcraft
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedUniverseFilter === "Diablo"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() => this.selectUniverseFilterHandler("Diablo")}
-                    >
-                      Diablo
-                    </li>
-                    <li
-                      style={
-                        this.state.selectedUniverseFilter === "Nexus"
-                          ? { textDecoration: "underline", fontWeight: "bold" }
-                          : null
-                      }
-                      onClick={() => this.selectUniverseFilterHandler("Nexus")}
-                    >
-                      Nexus
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <h1 className="HeroesContainer-title">Heroes</h1>
-              <ul>
-                <FlipMove
-                  className="HeroesList"
-                  style={{}}
-                  duration={200}
-                  easing="linear"
-                >
-                  {filterdChamps.length > 0 ? (
-                    heroes
-                  ) : (
-                    <p>There are no champions matching your filters!</p>
-                  )}
-                </FlipMove>
-              </ul>
-              {heroCard}
-            </div>
-          </section>
-          <DownloadHeroes />
-          <Social />
-          <Footer />
-        </div>
+        <NavBar />
+        <section className="ChampionStats">
+          <div className="ChampionStatsContainer">
+            <img
+              src={
+                "/images/HeroesCards/" +
+                this.props.match.params.heroName +
+                ".jpg"
+              }
+            />
+            <div className="StatsList">{stats}</div>
+          </div>
+        </section>
+        <DownloadHeroes />
+        <Social />
+        <Footer />
       </React.Fragment>
     );
   }
 }
 
-export default ChampionShowcase;
+export default ChampionStats;

@@ -1,0 +1,104 @@
+.ChampionStats {
+  width: 100%;
+  padding-top: 160px;
+  padding-bottom: 60px;
+  background: url("/images/Backgrounds/heroes-bg.jpg") no-repeat center
+    center/cover;
+  margin-top: -50px;
+}
+
+.ChampionStatsContainer {
+  position: relative;
+  width: 620px;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.ChampionStatsContainer img {
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 30px;
+}
+
+.HeroStatsContainer {
+  width: 600px;
+  height: auto;
+  position: relative;
+  background: #999;
+  padding: 2px;
+  margin: 20px 0;
+}
+
+.HeroStats {
+  width: 100%;
+  height: 100%;
+  background: #222;
+}
+
+.BarContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #444;
+  border-bottom: solid 1px grey;
+  display: flex;
+}
+
+.stat {
+  display: flex;
+  position: relative;
+  height: 30px;
+  align-items: center;
+}
+.stat p {
+  width: 150px;
+  display: block;
+  margin-left: 10px;
+}
+.bar {
+  text-align: right;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.bar span {
+  color: #111;
+  margin: 10px;
+}
+
+.damageBar {
+  background: coral;
+}
+.utilityBar {
+  background: lightgreen;
+}
+.survivabilityBar {
+  background: lightblue;
+}
+.complexityBar {
+  background: lightyellow;
+}
+
+@media screen and (min-width: 1921px) {
+  .ChampionStatsContainer {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ChampionStatsContainer {
+    width: 90%;
+  }
+  .HeroStatsContainer {
+    width: 100%;
+  }
+  .ChampionStats {
+    padding-top: 150px;
+  }
+}

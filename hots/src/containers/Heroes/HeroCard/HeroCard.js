@@ -32,13 +32,16 @@ class HeroCard extends Component {
     return (
       <div className="HeroCard-container">
         <div className="HeroCard">
-          <div
-            className="HeroCard-background"
-            style={{
-              backgroundImage:
-                "url(/images/HeroesCards/" + `${this.props.imgURL}` + ")"
-            }}
-          ></div>
+          <a href={"/heroes/" + this.props.name}>
+            <div
+              className="HeroCard-background"
+              style={{
+                backgroundImage:
+                  "url(/images/HeroesCards/" + `${this.props.imgURL}` + ")"
+              }}
+            ></div>
+          </a>
+
           <div className="HeroCard-name">
             <h1>{this.props.name}</h1>
           </div>
