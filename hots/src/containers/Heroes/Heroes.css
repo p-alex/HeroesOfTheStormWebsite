@@ -2,44 +2,101 @@
   position: relative;
   width: 100%;
   top: 0px;
-  padding-top: 350px;
+  padding-top: 150px;
   padding-bottom: 60px;
   background: url("/images/Backgrounds/heroes-bg.jpg") no-repeat center
     center/cover;
   margin-top: -50px;
 }
 
-.HeroesContainer {
+.HeroesWrapper {
   position: relative;
   width: var(--containerWidth);
-  display: flex;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.HeroesFilter {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.Role {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.Role p {
+  font-size: 21px;
+  margin-right: 10px;
+}
+
+.Universe {
+  display: flex;
+  align-items: center;
+}
+
+.Universe p {
+  font-size: 21px;
+  margin-right: 10px;
+}
+
+.FiltersContainer {
+  display: flex;
+}
+.FiltersContainer li {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+
+.FiltersContainer li.active-filter img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+.FiltersContainer li img {
+  width: 100%;
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+
+.HeroesContainer {
+  position: relative;
+  margin: auto;
+  display: flex;
+  width: 100%;
   justify-content: space-between;
 }
 
 .HeroesContainer-title {
-  position: absolute;
-  top: -180px;
+  position: relative;
   font-size: 45px;
   text-shadow: 0 5px 3px #111;
+  margin-bottom: 20px;
 }
 
 .HeroesList {
   display: flex;
+  position: relative;
   flex-wrap: wrap;
   justify-content: left;
   width: 100%;
+  animation-name: opacity1;
+  animation-duration: 400ms;
 }
 
 .HeroesList li {
+  position: relative;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  min-width: 100px;
-  padding-right: 30px;
-  margin-bottom: 40px;
+  padding: 1.4%;
   cursor: pointer;
-  height: 150px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .HeroesList li p {
@@ -49,49 +106,20 @@
 
 .HeroesList li img {
   border: solid 4px transparent;
-  width: 120px;
-  height: 120px;
-}
-
-.HeroesFilter {
-  position: absolute;
-  display: flex;
-  top: -110px;
-  font-size: 18px;
   width: 100%;
-  flex-direction: column;
 }
 
-.HeroesFilter p {
-  color: orange;
-  width: 70px;
-}
-
-.Role {
-  display: flex;
-  align-items: center;
-}
-
-.Roles {
-  display: flex;
-}
-
-.Universe {
-  display: flex;
-}
-
-.Universe li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.Roles li {
-  padding: 10px;
-  cursor: pointer;
+.heroes-stats-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 @media screen and (min-width: 1921px) {
-  .HeroesContainer {
+  .HeroesWrapper {
     position: relative;
     width: 60%;
     margin: auto;
@@ -100,7 +128,13 @@
     width: 100%;
   }
 }
-
+@media screen and (max-width: 1400px) {
+  .HeroesWrapper {
+    position: relative;
+    width: 90%;
+    margin: auto;
+  }
+}
 @media screen and (max-width: 1230px) {
   .HeroesList {
     width: 100%;
@@ -108,56 +142,61 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .HeroesList {
     justify-content: center;
     width: 100%;
   }
   .HeroesList li img {
     border: solid 4px transparent;
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
   }
   .HeroesList li {
     display: flex;
     flex-direction: column;
     text-align: center;
-    min-width: 150px;
+    min-width: 100px;
+    padding: 7px;
     align-items: center;
-    margin-bottom: 0;
     cursor: pointer;
-    height: 150px;
   }
   .HeroesContainer-title {
-    position: absolute;
-    top: -200px;
     font-size: 45px;
     text-shadow: 0 5px 3px #111;
-  }
-  .HeroesFilter {
-    position: absolute;
-    display: flex;
-    top: -130px;
-    font-size: 18px;
-    width: 100%;
-    flex-direction: column;
-    word-break: keep-all;
   }
   .HeroesList li p {
     margin-top: 10px;
     font-size: 16px;
   }
+  .HeroesFilter {
+    flex-direction: column;
+  }
+
+  .Role p {
+    width: 100px;
+  }
+
+  .Universe p {
+    width: 100px;
+  }
 }
 
 @media screen and (max-width: 700px) {
-  .HeroesContainer {
-    position: relative;
-    width: 95%;
-    margin: auto;
-  }
   .HeroesList {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+  }
+  .Role {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .Universe {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

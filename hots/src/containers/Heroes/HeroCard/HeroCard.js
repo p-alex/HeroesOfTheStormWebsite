@@ -37,7 +37,7 @@ class HeroCard extends Component {
               className="HeroCard-background"
               style={{
                 backgroundImage:
-                  "url(/images/HeroesCards/" + `${this.props.imgURL}` + ")"
+                  "url(/images/HeroesCards/" + `${this.props.imgURL}` + ".jpg)"
               }}
             ></div>
           </a>
@@ -60,7 +60,7 @@ class HeroCard extends Component {
             </div>
           </div>
           <div className="HeroCard-learn">
-            <a href="/">LEARN MORE</a>
+            <a href={"/heroes/" + this.props.name}>LEARN MORE</a>
           </div>
         </div>
       </div>

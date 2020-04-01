@@ -24,7 +24,7 @@ class WeeklyRotation extends Component {
     const freeChamps = this.state.freeChamps.map(champ => {
       return (
         <li>
-          <a href="/">
+          <a href={"/heroes/" + champ.name}>
             <img
               src={"/images/HeroesProfile/" + champ.name + ".png"}
               alt={champ.name}
@@ -46,7 +46,7 @@ class WeeklyRotation extends Component {
                 hero can upend a match – especially if mastered by a determined
                 player.
               </p>
-              <a href="/">SEE ALL HEROES</a>
+              <a href="/heroes">SEE ALL HEROES</a>
             </div>
             <div className="latest-champs">
               <p style={{ textAlign: "left" }}>LATEST</p>

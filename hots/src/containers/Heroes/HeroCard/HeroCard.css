@@ -1,6 +1,6 @@
 .HeroCard-container {
   position: sticky;
-  width: 450px;
+  width: 500px;
   border: solid red 1px;
   top: 150px;
   height: 100%;
@@ -10,7 +10,7 @@
 }
 .HeroCard {
   position: relative;
-  width: 450px;
+  width: 500px;
   top: 0;
   right: 0;
   height: 100%;
@@ -20,10 +20,10 @@
 }
 .HeroCard-background {
   width: 100%;
-  height: 400px;
-  background-position: center;
+  height: 350px;
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: fill;
   animation-name: opacity1;
   animation-duration: 500ms;
   cursor: pointer;
@@ -31,7 +31,7 @@
 
 .HeroCard-panel {
   display: flex;
-  width: 370px;
+  width: 100%;
   margin: auto;
   align-items: center;
   position: relative;
@@ -42,7 +42,7 @@
     rgba(26, 55, 170, 0.98) 51%,
     rgba(46, 46, 226, 0.98) 100%
   );
-  top: -80px;
+  top: -100px;
 }
 .HeroCard-panel p {
   padding: 10px;
@@ -67,7 +67,7 @@
 
 .HeroCard-name h1 {
   position: absolute;
-  bottom: 100px;
+  bottom: 110px;
   font-size: 35px;
   text-shadow: 0 0px 10px black;
 }
@@ -102,7 +102,7 @@
 @media screen and (min-width: 1921px) {
 }
 
-@media screen and (max-width: 1230px) {
+@media screen and (max-width: 1330px) {
   .HeroCard-container {
     display: none;
   }
