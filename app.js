@@ -1274,12 +1274,12 @@ app.get("/champions", (req, res) => {
     });
     c.save();
   });
-  // Champion.find({}, (err, results) => {
-  //   if (err) {
-  //     console.log(err);
-  //   } else {
-  //     console.log("DATA SENT !");
-  //     res.send(results);
-  //   }
-  // });
+  Champion.find({}, (err, results) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("DATA SENT !");
+      res.send(results);
+    }
+  });
 });
