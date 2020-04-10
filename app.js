@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("hots/build"));
 }
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost:27017/championsDB",
+  "mongodb+srv://alex-daniel:test123@cluster0-q39go.mongodb.net/championsDB",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -1258,22 +1258,6 @@ const champions = [
   },
 ];
 app.get("/champions", (req, res) => {
-  champions.map((item) => {
-    let c = new Champion({
-      name: item.name,
-      title: item.title,
-      desc: item.desc,
-      imgURL: item.imgURL,
-      damage: item.damage,
-      utility: item.utility,
-      survivability: item.survivability,
-      complexity: item.complexity,
-      type: item.type,
-      universe: item.universe,
-      secondForm: item.secondForm,
-    });
-    c.save();
-  });
   Champion.find({}, (err, results) => {
     if (err) {
       console.log(err);
