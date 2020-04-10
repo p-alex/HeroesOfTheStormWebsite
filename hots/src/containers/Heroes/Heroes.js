@@ -20,7 +20,7 @@ class ChampionShowcase extends Component {
   };
   componentDidMount() {
     this.setState({ loading: true });
-    axios.get("/champions").then((response) => {
+    axios.get("/api/users").then((response) => {
       this.setState({ champions: response.data, loading: false });
     });
   }
