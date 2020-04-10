@@ -2,11 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname + "hots/build")));
+  app.use(express.static("hots/build"));
 }
-modeapp.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/public/index.html"));
-});
 mongoose.connect(
   "mongodb+srv://alex-daniel:test123@cluster0-q39go.mongodb.net/championsDB",
   {
