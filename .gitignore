@@ -7,3 +7,7 @@ hots/public/images/Backgrounds/download1.jpg
 hots/public/images/Backgrounds/download.jpg
 hots/public/images/Backgrounds/Download.png
 hots/public/images/Backgrounds/downloadheroespng.png
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
