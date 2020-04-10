@@ -29,12 +29,27 @@
   margin-right: 40px;
 }
 
+.Role li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Role ul li img {
+  width: 110%;
+}
+
 .Role p {
   font-size: 21px;
   margin-right: 10px;
 }
 
 .Universe {
+  display: flex;
+  align-items: center;
+}
+
+.Universe li {
   display: flex;
   align-items: center;
 }

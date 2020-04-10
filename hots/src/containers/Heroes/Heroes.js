@@ -16,22 +16,22 @@ class ChampionShowcase extends Component {
     selectedRoleFilter: "All",
     selectedUniverseFilter: "All",
     champions: [],
-    loading: false
+    loading: false,
   };
   componentDidMount() {
     this.setState({ loading: true });
-    axios.get("/champions").then(response => {
+    axios.get("/champions").then((response) => {
       this.setState({ champions: response.data, loading: false });
     });
   }
   selectHeroHandler = (name, e) => {
-    if (window.innerWidth > 1230) {
+    if (window.innerWidth > 1330) {
       e.preventDefault();
     }
     this.setState({ selectedHero: name });
   };
 
-  selectRoleFilterHandler = filter => {
+  selectRoleFilterHandler = (filter) => {
     if (filter !== this.state.selectedRoleFilter) {
       this.setState({ selectedRoleFilter: filter });
     } else if (filter === this.state.selectedRoleFilter) {
@@ -39,7 +39,7 @@ class ChampionShowcase extends Component {
     }
   };
 
-  selectUniverseFilterHandler = universe => {
+  selectUniverseFilterHandler = (universe) => {
     if (universe !== this.state.selectedUniverseFilter) {
       this.setState({ selectedUniverseFilter: universe });
     } else if (universe === this.state.selectedUniverseFilter) {
@@ -48,7 +48,7 @@ class ChampionShowcase extends Component {
   };
   render() {
     let Champs = [...this.state.champions];
-    const filterdChamps = Champs.filter(item => {
+    const filterdChamps = Champs.filter((item) => {
       if (
         item.type === this.state.selectedRoleFilter &&
         item.universe === this.state.selectedUniverseFilter
@@ -70,11 +70,11 @@ class ChampionShowcase extends Component {
         return item;
       }
     });
-    const heroes = filterdChamps.map(champ => {
+    const heroes = filterdChamps.map((champ) => {
       return (
         <li
           key={champ.name}
-          onClick={e => this.selectHeroHandler(champ.name, e)}
+          onClick={(e) => this.selectHeroHandler(champ.name, e)}
         >
           {this.state.selectedHero === champ.name ? (
             <React.Fragment>
@@ -88,7 +88,7 @@ class ChampionShowcase extends Component {
                   border: "solid white 4px",
                   borderRadius: "50%",
                   boxShadow: "0 0 10px white",
-                  filter: "brightness(1.2)"
+                  filter: "brightness(1.2)",
                 }}
               />
               <p style={{ fontWeight: "bold" }}>{champ.name}</p>
@@ -106,7 +106,7 @@ class ChampionShowcase extends Component {
         </li>
       );
     });
-    const heroCard = this.state.champions.map(card => {
+    const heroCard = this.state.champions.map((card) => {
       return (
         <React.Fragment key={card.title}>
           {this.state.selectedHero === card.name ? (
@@ -181,10 +181,10 @@ class ChampionShowcase extends Component {
                     </li>
                     <li
                       onClick={() =>
-                        this.selectRoleFilterHandler("melee assassin")
+                        this.selectRoleFilterHandler("melee-assassin")
                       }
                       className={
-                        this.state.selectedRoleFilter === "melee assassin"
+                        this.state.selectedRoleFilter === "melee-assassin"
                           ? "active-filter"
                           : null
                       }
@@ -193,10 +193,10 @@ class ChampionShowcase extends Component {
                     </li>
                     <li
                       onClick={() =>
-                        this.selectRoleFilterHandler("ranged assassin")
+                        this.selectRoleFilterHandler("ranged-assassin")
                       }
                       className={
-                        this.state.selectedRoleFilter === "ranged assassin"
+                        this.state.selectedRoleFilter === "ranged-assassin"
                           ? "active-filter"
                           : null
                       }
