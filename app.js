@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const router = express.Router();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("hots/build"));
 }
