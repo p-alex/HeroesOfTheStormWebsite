@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const router = express.Router();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("hots/build"));
 }
@@ -34,16 +35,16 @@ const championSchema = new mongoose.Schema({
 const Champion = mongoose.model("Champion", championSchema);
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log(process.env.PORT);
+  console.log("Server started on port 5000");
 });
 
-app.get("/", (req, res) => {
+app.get("/champions", (req, res) => {
   Champion.find({}, (err, results) => {
     if (err) {
       console.log(err);
     } else {
       console.log("DATA SENT !");
-      res.send(results);
+      res.json(results);
     }
   });
 });
