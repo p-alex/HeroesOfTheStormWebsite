@@ -11,7 +11,7 @@
     "client": "cd hots && npm start",
     "start": "node app.js"
   },
-  "proxy": "https://heroesapp9021.herokuapp.com/",
+  "proxy": "http://heroesapp9021.herokuapp.com/",
   "author": "",
   "license": "ISC",
   "engines": {
