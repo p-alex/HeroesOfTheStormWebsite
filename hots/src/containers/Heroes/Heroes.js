@@ -20,9 +20,12 @@ class ChampionShowcase extends Component {
   };
   componentDidMount() {
     this.setState({ loading: true });
-    axios.get("/api/champions").then((response) => {
-      this.setState({ champions: response.data, loading: false });
-    });
+    axios
+      .get("/api/champions")
+      .then((response) => {
+        this.setState({ champions: response.data, loading: false });
+      })
+      .catch((err) => console.log(err));
   }
   selectHeroHandler = (name, e) => {
     if (window.innerWidth > 1330) {

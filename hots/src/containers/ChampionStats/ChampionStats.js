@@ -15,15 +15,18 @@ class ChampionStats extends Component {
   };
   componentDidMount() {
     this.setState({ loader: true });
-    axios.get("/api/champions").then((response) => {
-      const champion = response.data.filter((champ) => {
-        if (champ.name === this.props.match.params.heroName) {
-          return champ;
-        }
-      });
-      console.log(this.state.champions);
-      this.setState({ champions: champion, loader: false });
-    });
+    axios
+      .get("/api/champions")
+      .then((response) => {
+        const champion = response.data.filter((champ) => {
+          if (champ.name === this.props.match.params.heroName) {
+            return champ;
+          }
+        });
+        console.log(this.state.champions);
+        this.setState({ champions: champion, loader: false });
+      })
+      .catch((err) => console.log(err));
   }
   render() {
     let stats = null;
