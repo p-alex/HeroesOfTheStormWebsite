@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const champions = require("./routes/api/champions");
+const path = require("path");
 const app = express();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("hots/build"));
@@ -29,6 +30,14 @@ app.listen(process.env.PORT || 5000, () => {
 //Use Routes
 
 app.use("/api/champions", champions);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("hots/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "hots", "build", "index.html"));
+  });
+}
 
 app.get("/champions", (req, res) => {
   Champion.find({}, (err, results) => {
