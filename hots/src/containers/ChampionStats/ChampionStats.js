@@ -15,7 +15,7 @@ class ChampionStats extends Component {
   };
   componentDidMount() {
     this.setState({ loader: true });
-    axios.get("/champions").then((response) => {
+    axios.get("/api/champions").then((response) => {
       const champion = response.data.filter((champ) => {
         if (champ.name === this.props.match.params.heroName) {
           return champ;

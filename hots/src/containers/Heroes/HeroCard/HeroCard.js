@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import "./HeroCard.css";
 class HeroCard extends Component {
   state = {
-    difficulty: ""
+    difficulty: "",
   };
 
   componentDidMount() {
-    console.log(this.props);
     if (
       this.props.complexity === "10%" ||
       this.props.complexity === "20%" ||
@@ -37,7 +36,7 @@ class HeroCard extends Component {
               className="HeroCard-background"
               style={{
                 backgroundImage:
-                  "url(/images/HeroesCards/" + `${this.props.imgURL}` + ".jpg)"
+                  "url(/images/HeroesCards/" + `${this.props.imgURL}` + ".jpg)",
               }}
             ></div>
           </a>
