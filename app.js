@@ -23,8 +23,8 @@ mongoose
 //q10wC5otdrTF8MLH
 //mongodb+srv://alex-daniel:q10wC5otdrTF8MLH@championdb-q39go.mongodb.net/test?retryWrites=true&w=majority
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log("Server started on port 5000");
+app.listen(process.env.PORT || 8000, () => {
+  console.log("Server started on port 8000");
 });
 
 //Use Routes

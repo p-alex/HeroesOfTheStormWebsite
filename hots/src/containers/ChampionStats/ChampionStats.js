@@ -4,6 +4,7 @@ import NavBar from "../../components/Banner/NavBar/NavBar";
 import DownloadHeroes from "../../components/DownloadHeroes/DownloadHeroes";
 import Social from "../../components/Social/Social";
 import Footer from "../../components/Footer/Footer";
+
 import "./ChampionStats.css";
 import Loader from "../../ui/loader/loader";
 import axios from "axios";
@@ -11,10 +12,10 @@ import axios from "axios";
 class ChampionStats extends Component {
   state = {
     champions: [],
-    loader: false,
+    loading: false,
   };
   componentDidMount() {
-    this.setState({ loader: true });
+    this.setState({ loading: true });
     axios
       .get("/api/champions")
       .then((response) => {
@@ -24,13 +25,13 @@ class ChampionStats extends Component {
           }
         });
         console.log(this.state.champions);
-        this.setState({ champions: champion, loader: false });
+        this.setState({ champions: champion, loading: false });
       })
       .catch((err) => console.log(err));
   }
   render() {
     let stats = null;
-    if (!this.state.loader) {
+    if (!this.state.loading) {
       stats = this.state.champions.map((stat) => {
         if (stat.name === this.props.match.params.heroName) {
           return (
@@ -116,7 +117,7 @@ class ChampionStats extends Component {
             })}
 
             <div className="StatsList">
-              {!this.state.loader ? (
+              {!this.state.loading ? (
                 <React.Fragment>{stats}</React.Fragment>
               ) : (
                 <Loader />
