@@ -159,13 +159,13 @@
 
 @media screen and (max-width: 1000px) {
   .HeroesList {
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
   }
   .HeroesList li img {
     border: solid 4px transparent;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
   .HeroesList li {
     display: flex;
@@ -201,7 +201,6 @@
   .HeroesList {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
   }
   .Role {
     width: 100%;
