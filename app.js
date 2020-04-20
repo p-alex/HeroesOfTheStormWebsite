@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === "production") {
 }
 mongoose
   .connect(
-    "mongodb+srv://alex-daniel:test123@cluster0-q39go.mongodb.net/championsDB",
+    "mongodb+srv://alex-daniel:8RDqfkxLD5XV7qMW@cluster0-q39go.mongodb.net/championsDB",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -38,14 +38,3 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "hots", "build", "index.html"));
   });
 }
-
-app.get("/champions", (req, res) => {
-  Champion.find({}, (err, results) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("DATA SENT !");
-      res.json(results);
-    }
-  });
-});
