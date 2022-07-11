@@ -1,10 +1,10 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const champions = require('./routes/api/champions');
-const path = require('path');
+const express = require("express");
+const mongoose = require("mongoose");
+const champions = require("./routes/api/champions");
+const path = require("path");
 const app = express();
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('hots/build'));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("hots/build"));
 }
 mongoose
   .connect(
@@ -14,25 +14,21 @@ mongoose
       useUnifiedTopology: true,
     }
   )
-  .then(() => console.log('MongoDB Connected !'))
+  .then(() => console.log("MongoDB Connected !"))
   .catch((err) => console.log(err));
 
-// mongoose.connection.on("connected", () => {
-//   console.log("Mongoose is connected !");
-// });
-
 app.listen(process.env.PORT || 8000, () => {
-  console.log('Server started on port 8000');
+  console.log("Server started on port 8000");
 });
 
 //Use Routes
 
-app.use('/api/champions', champions);
+app.use("/api/champions", champions);
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('hots/build'));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("hots/build"));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'hots', 'build', 'index.html'));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "hots", "build", "index.html"));
   });
 }
